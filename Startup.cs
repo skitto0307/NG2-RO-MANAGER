@@ -53,12 +53,17 @@ namespace NG2_RO_MANAGER
             
             app.UseStaticFiles();
 
-            //Used for local development enviornment. 
-            app.UseStaticFiles(new StaticFileOptions
+           
+            if(env.IsDevelopment())
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules")),
-                RequestPath = "/node_modules"
-            });
+                //Used for local development enviornment. 
+                app.UseStaticFiles(new StaticFileOptions
+                {
+                    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules")),
+                    RequestPath = "/node_modules"
+                });
+            }
+            
             
             app.UseMvc(routes =>
             {
