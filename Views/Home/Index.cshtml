@@ -1,0 +1,30 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <base href="~/">
+    <environment names="Development">
+            <script src="node_modules/core-js/client/shim.min.js"></script>
+            <script src="node_modules/zone.js/dist/zone.js"></script>
+            <script src="node_modules/reflect-metadata/Reflect.js"></script>
+            <script src="node_modules/systemjs/dist/system.src.js"></script>
+            <script src="systemjs.config.js"></script>
+            <script>
+                System.import('app').catch(console.error.bind(console));
+            </script>
+    </environment>
+    <environment names="Production">
+        <script src="~/lib/bundles/app.dependencies.min.js" asp-append-version="true"></script>
+        <script src="~/systemjs.config.min.js" asp-append-version="true"></script>
+        <script>
+            System.import('app').catch(console.error.bind(console));
+        </script>
+    </environment>
+ </head>
+<body>
+    <app>Loading...</app>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿// Configure bundling and minification for the project.
+// More info at https://go.microsoft.com/fwlink/?LinkId=808241
+[
+  {
+    "outputFileName": "wwwroot/lib/bundles/app.dependencies.min.js",
+    // An array of relative input file paths. Globbing patterns supported
+    "inputFiles": [
+      "node_modules/core-js/client/shim.js",
+      "node_modules/zone.js/dist/zone.js",
+      "node_modules/reflect-metadata/Reflect.js",
+      "node_modules/systemjs/dist/system.src.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/systemjs.config.min.js",
+    "inputFiles": [
+      "wwwroot/systemjs.config.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  }
+]

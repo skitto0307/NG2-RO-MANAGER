@@ -1,0 +1,8 @@
+{
+      "files.exclude": {
+       "**/app/**/*.js.map": true,
+        "**/*.js": { "when": "$(basename).ts"},
+        "*.xproj":true,
+        "*.xproj.user":true
+    }
+}
