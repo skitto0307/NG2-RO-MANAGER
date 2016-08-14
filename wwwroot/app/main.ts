@@ -1,9 +1,4 @@
-﻿import { enableProdMode } from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {AppComponent } from './app.component';
+﻿import { browserDynamicPlatform } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
 
-//Todo: uncomment when prod
-//enableProdMode();
-
-
-bootstrap(AppComponent);
+browserDynamicPlatform().bootstrapModule(AppModule);
